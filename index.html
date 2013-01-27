@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>tabify</title>
+    <link rel="stylesheet" href="build/build.css">
+    <style>
+      ul.tabs {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        font-family: Arial;
+      }
+      ul.tabs li {
+        display: inline-block;
+        padding: 0;
+        margin: 0 5px;
+      }
+      ul.tabs li a {
+        display: inline-block;
+        border: 1px solid #aaa;
+        padding: 10px;
+        text-decoration: none;
+      }
+      ul.tabs li a.active {
+        display: inline-block;
+        border: 1px solid #aaa;
+        background: #aaa;
+        color: #fff;
+        padding: 10px;
+      }
+      .tabs-content {
+        border: 1px solid #aaa;
+        margin: 5px;
+        padding: 20px;
+        font-family: Arial;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="tabs" id="tabs">
+      <li><a href="#tab1">tab 1</a>
+      <li><a href="#tab2">tab 2</a>
+      <li><a href="#tab3">tab 3</a>
+    </ul>
+    <div class="tabs-content">
+      <div id="tab1"><h2>Tab 1</h2><p>Hello</p></div>
+      <div id="tab2"><h2>Tab 2</h2><p>Hi there</p></div>
+      <div id="tab3"><h2>Tab 3</h2><p>You seem to like clicking tabs</p></div>
+    </div>
+
+    <ul class="tabs" id="tabs2">
+      <li><a href="#other1">other 1</a>
+      <li><a href="#other2">other 2</a>
+      <li><a href="#other3">other 3</a>
+      <li><a href="#other4">other 4</a>
+      <li><a href="#other5">other 5</a>
+    </ul>
+    <div class="tabs-content">
+      <div id="other1"><h2>Tab 1</h2><p>Hello</p></div>
+      <div id="other2"><h2>Tab 2</h2><p>Hi there</p></div>
+      <div id="other3"><h2>Tab 3</h2><p>You seem to like clicking others</p></div>
+      <div id="other4"><h2>Tab 4</h2><p>Hiho</p></div>
+      <div id="other5"><h2>Tab 5</h2><p>Yoyo</p></div>
+    </div>
+    
+    <script src="build/build.js"></script>
+    <script>
+      var tabify = require('tabify')
+
+      var tabs = tabify(document.getElementById('tabs'))
+      tabs.on('change', console.log)
+
+      tabify(document.getElementById('tabs2')).on('change', console.log)
+    </script>
+  </body>
+</html>
