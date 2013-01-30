@@ -68,9 +68,11 @@
       var tabify = require('tabify')
 
       var tabs = tabify(document.getElementById('tabs'))
-      tabs.on('change', console.log)
+      tabs.on('change', log)
 
-      tabify(document.getElementById('tabs2')).on('change', console.log)
+      tabify(document.getElementById('tabs2')).on('change', log)
+
+      function log () { console.log.apply(console, arguments) }
     </script>
   </body>
 </html>
