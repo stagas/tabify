@@ -1,4 +1,3 @@
-
 /*!
  *
  * tabify
@@ -86,7 +85,6 @@ function tabify (el) {
 
   tabs.unbind = function () {
     links.forEach(function (a) {
-      console.log('removing listener...')
       a.removeEventListener('click', tabs.onclick)
     })
     tabs.removeAllListeners('change')
